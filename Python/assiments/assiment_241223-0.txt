@@ -1,0 +1,10 @@
+ich habe für mich aus dem Video viele mitnehmen können, besonders finde ich den befehl Try & Expect
+
+x = "Hello World"
+
+try:
+  print(x)
+except:
+  print("An exception occurred") 
+
+Wenn ein Fehler passiert, könnte dein Programm normalerweise abstürzen. Mit try und except kannst du solche Fehler abfangen, sodass dein Programm weiterläuft und nicht komplett aufhört. Was die Möglichkeit bietet Programm absturze zu vermeiden oder auch fehler im im nachhinein zu knorrigeren.

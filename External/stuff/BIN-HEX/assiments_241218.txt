@@ -1,0 +1,25 @@
+Addieren =
+
+  1011
++ 1101
+______
+=11000
+
+
+
+Subtrahieren =
+
+  1100
+- 1010
+______
+=  010
+
+
+Multiplizieren =
+
+	101 * 11
+    	     101
+  	    101
+            ____
+Übertrag =  111
+Produkt  =  1111
