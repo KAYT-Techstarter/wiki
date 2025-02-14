@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    width: 100vw;
+    background-color: rgb(146, 172, 199);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(151, 101, 40);
+    margin: auto;
+}
+
+button {
+    margin-bottom: 5px;
+}
+
+
+
+.nav-item-logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 15vh;
+}
+
+.logo {
+    text-align: left;
+    padding-left: 10px;
+    background-color: rgb(223, 205, 134);
+}
+
+.circle {
+    margin-left: 35px;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.title {
+    text-align: center;
+    height: 15vh;
+    background-color: rgb(190, 185, 108);
+}
+
+.right {
+    text-align: right;
+    padding-right: 10px;
+    height: 15vh;
+    background-color: rgb(43, 216, 115);
+}
+
+.shopitems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.shop-item {
+    border-radius: 12px;
+    padding-top: 5xp;
+    max-width: 118px;
+    flex: 1 1 auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+.shop-item img {
+    border-radius: 12px;
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+
+}
+
+section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 99vw;
+}
+
+.advertisment {
+    border-radius: 12px;
+    width: 95vw;
+    height: 15vh;
+    margin-left: 2%2.5;
+    margin-right: 5%;
+    margin-bottom: 15px;
+    background-color: black;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(204, 157, 99);
+}
+
+.footer-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}

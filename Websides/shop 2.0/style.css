@@ -1,0 +1,103 @@
+/* Body Part */
+
+body {
+    background-color: #345;
+    margin: 0;
+}
+
+/* Gloabale angaben*/
+
+p ,h1 ,img {
+    color: white;
+}
+
+a {
+    color: rgb(201, 53, 75);
+}
+
+/* Navigationsleiste */
+
+.navbar {
+    width: 100%;
+    display: flex; 
+
+}
+
+/* links */
+.navconatainer1 {
+    background-color: rgb(233, 218, 195);
+    flex-grow: 1;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(9, 65, 9);
+    border-radius: 50%;   
+}
+
+/* mitte */
+.navconatainer2 {
+    background-color: rgb(141, 97, 30);
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* rechts */
+.navconatainer3 {
+    background-color: rgb(228, 143, 16);
+    flex-grow: 1;
+}
+
+/* Shop Items */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97vw;
+    margin: 1.5vw auto;
+    justify-content: space-around;
+}
+
+.content-item {
+    
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.content-item img {
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+    max-height: 204px;
+    border-radius: 5px;
+}
+
+/* Werbung */
+
+.ad {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97vw;
+    margin: 1.5vw auto;
+    background-color: rgb(0, 0, 0);
+}
+
+/* Footer */
+
+.footercontainer {
+    width: 100%;
+    height: 50px;
+    display: flex; 
+}
+
+.footercontainer1 {
+    background-color: rgb(93, 59, 8);
+    flex-grow: 1;
+}
+
+.footercontainer2 {
+    background-color: rgb(57, 18, 201);
+    flex-grow: 1;
+}
