@@ -1,0 +1,23 @@
+Welche Tickets habt ihr für den ersten Sprint gewählt?
+
+Wir haben alle Überneommen as die Aufgaben das projekt insgesammt in er Demo nicht so groß ist
+
+Was sind eure Ziele für diesen Sprint?
+
+Unser Ziel ist es, die Grundstruktur der Portfolio-Website zu erstellen, inklusive Layout, Navigation und erster Inhalte.
+
+Was war einfach/schwierig am Planen mit Scrum?
+
+Einfach :
+Die Aufgaben verteilung war schon relativ simple
+
+Schwer :
+Es geht die zeiten sind schwierig einzuteilen
+
+Welche Herausforderungen habt ihr beim Erstellen der User Stories gesehen?
+
+Antwort 1.
+
+Würdet ihr Scrum für echte Projekte nutzen?
+
+Bei großen projekten kann ich mir as sehr gut vorstellen bei kleineren nur aufgrund er üerischtlichkeit

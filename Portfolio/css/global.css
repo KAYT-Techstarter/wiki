@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+p {
+    color: #aaa;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: url(../background.jpg);
+    background-size: cover;
+}
+
+.mobile {
+    position: relative;
+    width: 270px;
+    height: 480px;
+    background-color: #020c17;
+}
+
+.top {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 50px;
+    background: #efefef;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    box-shadow: 0 0 0 1px #999;
+}
+
+.top::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: #ccc;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+}
+
+.top::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 3px;
+    background: #333; 
+    border: 2px solid #aaa;
+    border-radius: 50%;
+}
+
+.screen {
+    box-shadow: 0 0 0 1px #999;
+}
+
+.bottom {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    height: 50px;
+    background: #efefef;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 0 0 1px #999;
+}
+
+.bottom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: #999;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bottom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #efefef;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.screen img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.screen.active img {
+    opacity: 1;
+}
+
+.screen {
+    position: relative;
+    width: 100%; 
+    height: 480px;
+    overflow: hidden; 
+}
+
+.screen::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); 
+    z-index: 1;
+    transform: skewX(-7deg);
+}
+

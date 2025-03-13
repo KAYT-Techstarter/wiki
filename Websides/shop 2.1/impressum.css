@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.content p {
+    text-align: center;
+}
+
+.impressum-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.impressum-list li {
+    margin-bottom: 8px;
+}
