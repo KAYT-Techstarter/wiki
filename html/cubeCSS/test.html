@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: grey;
+            background-color: rgb(199, 11, 11);
             flex-direction: column;
         }
 
@@ -35,7 +35,7 @@
             width: 200px;
             height: 200px;
             transform-style: preserve-3d;
-            animation: cubeRotate 8s infinite linear;
+            animation: cubeRotate 16s infinite linear;
         }
 
         .cube-face {
@@ -46,16 +46,20 @@
             border: 1px solid black;
         }
 
-        .front  { transform: translateZ(100px); }
+        .front  { transform: translateZ(100px);}
         .back   { transform: rotateY(180deg) translateZ(100px); }
-        .right  { transform: rotateY(90deg) translateZ(100px); }
-        .left   { transform: rotateY(-90deg) translateZ(100px); }
-        .top    { transform: rotateX(90deg) translateZ(100px); }
-        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+        .right  { transform: rotateY(90deg) translateZ(100px);}
+        .left   { transform: rotateY(-90deg) translateZ(100px);}
+        .top    { transform: rotateX(90deg) translateZ(100px);background-color: blue;}
+        .left2  { transform: rotateY(-45deg) translateZ(100px) translateY(200px);}
+        .left3  { transform: rotateY(-135deg) translateZ(100px) translateY(200px);}
+        .left4  { transform: rotateY(-225deg) translateZ(100px) translateY(200px);}
+        .left5  { transform: rotateY(45deg) translateZ(100px) translateY(200px);}
+        .bottom { transform: rotateX(-90deg) rotateZ(45deg) translateZ(300px);}
 
         @keyframes cubeRotate {
             from { transform: rotateX(0deg) rotateY(0deg); }
-            to   { transform: rotateX(360deg) rotateY(360deg); }
+            to   { transform: rotateX(360deg) rotateY(720deg); }
         }
     </style>
 </head>
@@ -65,12 +69,16 @@
     </div>
     <div class="scene">
         <div class="cube">
-            <div class="cube-face front"><h1 style="text-align:center;color:black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum</h1></div>
-            <div class="cube-face back"></div>
+            <div class="cube-face front"><h1 style="text-align:center;color:rgb(255, 255, 255);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum</h1></div>
+            <div class="cube-face back"><iframe width="200px" height="200px" src="https://www.youtube.com/embed/-YaHqTe3KYg?si=j_2ZdNZeuPA_0FnI&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
             <div class="cube-face right"></div>
+            <div class="cube-face left2"><img src="Soraka_BattleSheep_(Aqua)_WR.png" alt="Akali IMG Supreme Skin" style="height:200px;width:200px;object-fit:cover;"></div>
+            <div class="cube-face left3"><img src="Soraka_BattleSheep_(Aqua)_WR.png" alt="Akali IMG Supreme Skin" style="height:200px;width:200px;object-fit:cover;"></div>
+            <div class="cube-face left4"><img src="Soraka_BattleSheep_(Aqua)_WR.png" alt="Akali IMG Supreme Skin" style="height:200px;width:200px;object-fit:cover;"></div>
+            <div class="cube-face left5"><img src="Soraka_BattleSheep_(Aqua)_WR.png" alt="Akali IMG Supreme Skin" style="height:200px;width:200px;object-fit:cover;"></div>
             <div class="cube-face left"><img src="Akali_SupremeCellsLoading_WR.png" alt="Akali IMG Supreme Skin" style="height:200px;width:200px;object-fit:cover;object-position: top;"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
+            <div class="cube-face top"><p style="color:pink;font-size: 30px;text-align: center;">TEST2</p></div>
+            <div class="cube-face bottom"><p style="color:lime;">If You Read this are you Gay! :P</p></div>
         </div>
     </div>
 </body>

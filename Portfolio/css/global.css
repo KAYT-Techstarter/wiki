@@ -154,7 +154,7 @@ h2 span
 	list-style: none;
 	color: #fff;
 	font-size: 1.5em;
-	padding-bottom: 10px;
+	padding-bottom: 300px;
 	cursor: pointer;
 	transition: 0.5s;
 	opacity: 0;
@@ -184,5 +184,5 @@ h2 span
 }
 .screen.active ul li:hover .fa
 {
-	transform: translateY(-10px);
+	transform: rotateZ(360deg);
 }

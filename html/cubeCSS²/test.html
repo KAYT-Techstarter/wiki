@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotating Cube with Sliders</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: grey;
+            flex-direction: column;
+            user-select: none; /* Verhindert das Markieren von Text auf dem Würfel */
+        }
+
+        .scene {
+            perspective:120px;
+            position: relative;
+        }
+
+        .content {
+            position: absolute; 
+            top: 15%;
+            text-align: center;
+        }
+
+        h1 {
+            color: White;
+            font-size: 10px;
+        }
+
+        .cube {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            cursor: grab;
+            transition: transform 0.2s;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(113, 97, 97, 0.5);
+            border: 0.1px solid rgb(68, 68, 68);
+        }
+
+        .front  { transform: translateZ(50px); }
+        .back   { transform: rotateY(180deg) translateZ(50px); }
+        .right  { transform: rotateY(90deg) translateZ(50px); }
+        .left   { transform: rotateY(-90deg) translateZ(50px); }
+        .top    { transform: rotateX(90deg) translateZ(50px); background-color: blue; }
+        .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+        /* Slider Container */
+        .sliders {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .slider-container {
+            text-align: center;
+        }
+
+        .slider {
+            width: 200px;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>3D Rotating Cube with Sliders</h1>
+    </div>
+    <div class="scene" id="scene">
+        <div class="cube" id="cube">
+            <div class="cube-face front"><h1 style="text-align:center;color:rgb(255, 255, 255);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum</h1></div>
+            <div class="cube-face back">
+                <iframe width="100px" height="100px" src="https://www.youtube.com/embed/-YaHqTe3KYg?si=j_2ZdNZeuPA_0FnI&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left">
+                <img src="Soraka_BattleSheep_(Aqua)_WR.png" alt="Soraka_BattleSheep" style="height:100px;width:100px;object-fit:cover;object-position: top;">
+            </div>
+            <div class="cube-face top"><p style="color:pink;text-align: center;">TEST2</p></div>
+            <div class="cube-face bottom"></div>
+        </div>
+    </div>
+
+    <!-- Sliders for rotating the cube -->
+    <div class="sliders">
+        <div class="slider-container">
+            <label for="rotateX">Hoch Runter</label>
+            <input type="range" id="rotateX" class="slider" min="-180" max="180" value="0">
+        </div>
+        <div class="slider-container">
+            <label for="rotateY">Rechts Links</label>
+            <input type="range" id="rotateY" class="slider" min="-180" max="180" value="0">
+        </div>
+        <div class="slider-container">
+            <label for="rotateZ">Rechts Links Kippen</label>
+            <input type="range" id="rotateZ" class="slider" min="-180" max="180" value="0">
+        </div>
+    </div>
+
+    <script>
+        const cube = document.getElementById('cube');
+        const rotateXSlider = document.getElementById('rotateX');
+        const rotateYSlider = document.getElementById('rotateY');
+        const rotateZSlider = document.getElementById('rotateZ');
+
+        // Initial rotation values
+        let rotateX = 0;
+        let rotateY = 0;
+        let rotateZ = 0;
+
+        // Function to update cube rotation based on slider values
+        function updateRotation() {
+            cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+        }
+
+        // Event listeners for sliders
+        rotateXSlider.addEventListener('input', () => {
+            rotateX = rotateXSlider.value;
+            updateRotation();
+        });
+
+        rotateYSlider.addEventListener('input', () => {
+            rotateY = rotateYSlider.value;
+            updateRotation();
+        });
+
+        rotateZSlider.addEventListener('input', () => {
+            rotateZ = rotateZSlider.value;
+            updateRotation();
+        });
+    </script>
+</body>
+</html>
