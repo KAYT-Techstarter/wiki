@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure by | Marvin Young</title>
+    <style>
+        * {
+            transition-duration: 1000ms;
+            /* border: 1px solid black;  */
+        }
+
+        body {
+            background-color: darkgray;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: auto;
+            margin: 0;
+        }
+
+        header {
+            height: 20vh;
+            width: 100vw;
+            background-color: darkgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            height: 60vh;
+            width: 100vw;
+            display: flex;
+        }
+
+        .Left {
+            background-color: rgb(237, 0, 0);
+            height: 60vh;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .chatContent {
+            background-color: rgb(255, 255, 255);
+            height: 50vh;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .options {
+            background-color: darkgray;
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Right {
+            background-color: darkgray;
+            height: 60vh;
+            width: 60vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            height: 20vh;
+            width: 100vw;
+            background-color: darkgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .User {
+            padding: 5px;
+            margin: 5px;
+            width: 90%;
+            text-align: left;
+            align-self: flex-end;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .story {
+            padding: 5px;
+            margin: 5px;
+            width: 90%;
+            text-align: left;
+            align-self: flex-start;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #ausgabeFeld {
+            width: 35vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scene {
+            perspective: 200px;
+            transform: scale(1.4);
+        }
+
+        .cube {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            animation: cubeRotate 5s infinite linear;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .front {
+            transform: translateZ(50px);
+            background-image: url('bild.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(50px);
+            background-image: url('bild.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(50px);
+            background-image: url('bild.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(50px);
+            background-image: url('bild.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(50px);
+            background-image: url('bild.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+            background-image: url('bild.jpg');
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Adventure Game</h1>
+    </header>
+    <div class="content">
+        <div class="Left">
+            <div class="options">
+                <h1>Chat</h1>
+            </div>
+            <div class="chatContent" id="chatContent">
+                <div id="ausgabeFeld"></div>
+            </div>
+        </div>
+        <div class="Right">
+            <div class="scene">
+                <div class="cube" id="cube">
+                    <div class="cube-face front"><button id="start" onclick="gameStart()">Game Start</button></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <input id="inputField" placeholder="Schreib etwas..." disabled>
+        <button onclick="showInputValue()">Senden</button>
+    </footer>
+    <script>
+        let gameState = "";
+        let rotationX = 0;
+        let rotationY = 0;
+
+        function gameStart() {
+            document.getElementById("start").remove();
+            document.getElementById("inputField").disabled = false;
+            appendMessage("story", "Willkommen im Abenteuer! 🎮");
+            gameState = "start";
+            handleGameLogic("");
+        }
+
+        function showInputValue() {
+            let input = document.getElementById("inputField").value.trim().toLowerCase();
+            if (input === "" || gameState === "") return;
+            appendMessage("User", input);
+            handleGameLogic(input);
+            document.getElementById("inputField").value = "";
+        }
+
+        function handleGameLogic(input) {
+            let antwort = "";
+            let newRotationX = rotationX;
+            let newRotationY = rotationY;
+            let newImage = "";
+
+            if (gameState === "start") {
+                antwort = "Du stehst vor einem dunklen Wald. 'reingehen' oder 'umkehren'?";
+                gameState = "waldEntscheidung";
+                newRotationY = 0;
+
+            } else if (gameState === "waldEntscheidung") {
+                if (input === "reingehen") {
+                    newImage = "Ahri_ShanHaiScrollsSquare_WR.png";
+                    antwort = "Du hörst ein Geräusch... 'weitergehen' oder 'weglaufen'?";
+                    gameState = "waldTief";
+                    newRotationX = -90;
+                } else if (input === "umkehren") {
+                    antwort = "Du gehst zurück ins Dorf. Spiel vorbei.";
+                    gameState = "ende";
+                    newRotationY = -180;
+                    newImage = "dorf.jpg";
+                    setTimeout(() => {
+                        newRotationX = -90;
+                    }, 2000);
+
+                }
+            }
+
+            updateCubeImage(newImage);
+            rotateCube(newRotationX, newRotationY);
+            if (antwort) appendMessage("story", antwort);
+        }
+
+        function rotateCube(x, y) {
+            rotationX = x;
+            rotationY = y;
+            document.getElementById("cube").style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+        }
+
+        function updateCubeImage(image) {
+            if (image) {
+                document.querySelector(".top").style.backgroundImage = `url('${image}')`;
+            }
+        }
+
+        function appendMessage(sender, text) {
+            let message = document.createElement("p");
+            message.className = sender;
+            message.textContent = text;
+            document.getElementById("ausgabeFeld").appendChild(message);
+        }
+    </script>
+</body>
+
+</html>

@@ -20,16 +20,16 @@
 
         .cube {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             transform-style: preserve-3d;
             animation: cubeRotate 16s infinite;
         }
 
         .cube-face {
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             background: rgba(255, 255, 255, 0.8);
             border: 2px solid rgb(0, 0, 0);
         }
@@ -43,16 +43,16 @@
             border: 1px solid white;
         }
 
-        .front  { transform: translateZ(100px);}
-        .back   { transform: rotateY(180deg) translateZ(100px); }
-        .right  { transform: rotateY(90deg) translateZ(100px); }
-        .left   { transform: rotateY(-90deg) translateZ(100px); }
-        .top    { transform: rotateX(90deg) translateZ(100px); }
-        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+        .front  { transform: translateZ(50px);}
+        .back   { transform: rotateY(180deg) translateZ(50px); }
+        .right  { transform: rotateY(90deg) translateZ(50px); }
+        .left   { transform: rotateY(-90deg) translateZ(50px); }
+        .top    { transform: rotateX(90deg) translateZ(50px); }
+        .bottom { transform: rotateX(-90deg) translateZ(50px); }
 
         @keyframes cubeRotate {
             0% { transform: rotateX(0deg) rotateY(0deg); }
-            50%   { transform: rotateX(90deg) rotateY(360deg); }
+            50%   { transform: rotateX(3600deg) rotateY(360deg); }
             100% { transform: rotateX(0deg) rotateY(0deg); }
         }
     </style>
@@ -61,22 +61,22 @@
     <div class="scene">
         <div class="cube">
             <div class="cube-face front">
-
+                6
             </div>
             <div class="cube-face back">
-
+                5
             </div>
             <div class="cube-face right">
-
+                4
             </div>
             <div class="cube-face left">
-                
+                3
             </div>
             <div class="cube-face top">
-
+                2
             </div>
             <div class="cube-face bottom">
-
+                <p>1</p>
             </div>
         </div>
     </div>

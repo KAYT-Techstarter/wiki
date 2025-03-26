@@ -1,58 +1,69 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" href="./css/global.css">
-	<title>Portfolio | Marvin Young</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <title>Portfolio | Marvin Young</title>
 </head>
 <body>
-	<div class="mobile">
-			<div class="top"></div>
-			<div class="bottom"></div>
-			<div class="screen">
-				<img src="background.jpg">
-				<h2 id="time"><span></span><br><span></span></h2>
-				<ul>
-					<li><a href="tel:+4915756090581"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-					<li><a href="mailto:marvin.youg.main@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
-					<li><i class="fa fa-picture-o" aria-hidden="true"></i></li>
-					<li><i class="fa fa-camera" aria-hidden="true"></i></li>
-				</ul>
-				
-				<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-				<script>
-					function updateTime() {
-						let now = new Date();
-						let hours = now.getHours();
-						let minutes = now.getMinutes();
-						let ampm = hours >= 12 ? 'PM' : 'AM';
-						hours = hours % 12;
-						hours = hours ? hours : 12; // 12-Stunden-Format
-						minutes = minutes < 10 ? '0' + minutes : minutes;
-						let timeString = hours + ":" + minutes + "<span>" + ampm + "</span>";
-				
-						let day = now.getDate();
-						let month = now.toLocaleString('en-US', { month: 'long' });
-						let year = now.getFullYear();
-						let dateString = "<span>" + day + "th " + month + ", " + year + "</span>";
-						
-						$("#time").html(timeString + "<br>" + dateString);
-					}
-				
-					$(document).ready(function(){
-						updateTime();
-						setInterval(updateTime, 60000); // Jede Minute aktualisieren
-						
-						$('.bottom').click(function(){
-							$('.screen').toggleClass('active');
-						});
-					});
-				</script>
+    <h1>Portfolio Project from Marvin Young</h1>
+	<h3>The Phone is Interactive</h3>
+    <div class="mobile">
+        <div class="top"></div>
+        <div class="screen">
+            <img src="background.jpg">
+            <h2 id="time"><span></span><br><span></span></h2>
+            <ul class="apps">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+            <ul>
+                <li><a href="tel:+4915756090581"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                <li><a href="mailto:marvin.youg.main@gmail.com"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
+                <li><i class="fa fa-picture-o" aria-hidden="true"></i></li>
+                <li><i class="fa fa-camera" aria-hidden="true"></i></li>
+            </ul>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script>
+                function updateTime() {
+                    let now = new Date();
+                    let hours = now.getHours();
+                    let minutes = now.getMinutes();
+                    let ampm = hours >= 12 ? 'PM' : 'AM';
+                    
+                    hours = hours % 12;
+                    hours = hours ? hours : 12; // 12-Stunden-Format PM AM 
+                    minutes = minutes < 10 ? '0' + minutes : minutes;
+                    let timeString = hours + ":" + minutes + "<span>" + ampm + "</span>";
+
+                    let day = now.getDate();
+                    let month = now.toLocaleString('en-US', { month: 'long' });
+                    let year = now.getFullYear();
+                    let dateString = "<span>" + day + "th " + month + ", " + year + "</span>";
+
+                    $("#time").html(timeString + "<br>" + dateString);
+                }
+
+                $(document).ready(function(){
+                    updateTime();
+                    setInterval(updateTime, 60000);
+                    
+                    $('.bottom').click(function(){
+                        $('.screen').toggleClass('active');
+                        $('body').toggleClass('screen-active');
+                    });
+                });
+            </script>
+        </div>
+        <div class="bottom"></div>	
+    </div>
 </body>
-</html>		
-		
-
-
+</html>

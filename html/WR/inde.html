@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Stats Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        .form-group { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>League of Legends Stats Tracker</h1>
+        
+        <div class="form-group">
+            <label>Spielmodus:</label>
+            <select id="mode">
+                <option value="Ranked">Ranked</option>
+                <option value="Aram">Aram</option>
+                <option value="Vs AI">Vs AI</option>
+                <option value="Arena">Arena</option>
+                <option value="URF">URF</option>
+                <option value="Hextech Aram">Hextech Aram</option>
+            </select>
+            <label>Gewonnenes Team (1 oder 2):</label>
+            <input type="number" id="winningTeam" min="1" max="2">
+        </div>
+        
+        <h2>Spieler hinzufügen</h2>
+        <div class="form-group">
+            <label>Rolle:</label>
+            <select id="role">
+                <option value="Top">Top</option>
+                <option value="Jungle">Jungle</option>
+                <option value="Mid">Mid</option>
+                <option value="Adc">Adc</option>
+                <option value="Support">Support</option>
+            </select>
+            <label>Champion:</label>
+            <input type="text" id="champion" placeholder="Champion Name">
+            <label>Rang:</label>
+            <select id="rank">
+                <option value="Bronze">Bronze</option>
+                <option value="Silber">Silber</option>
+                <option value="Gold">Gold</option>
+                <option value="Platin">Platin</option>
+                <option value="Diamant">Diamant</option>
+                <option value="Master">Master</option>
+                <option value="Grandmaster">Grandmaster</option>
+                <option value="Challenger">Challenger</option>
+                <option value="Sovereign">Sovereign</option>
+            </select>
+            <label>KDA (Kills/Deaths/Assists):</label>
+            <input type="text" id="kda" placeholder="z.B. 10/2/5">
+            <label>Team:</label>
+            <select id="team">
+                <option value="1">Team 1</option>
+                <option value="2">Team 2</option>
+            </select>
+            <label>Auszeichnung (optional):</label>
+            <input type="text" id="award" placeholder="SVP/MVP oder leer lassen">
+            <button onclick="addPlayer()">Spieler hinzufügen</button>
+        </div>
+        
+        <h2>Gespielte Spiele</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rolle</th>
+                    <th>Champion</th>
+                    <th>Rang</th>
+                    <th>KDA</th>
+                    <th>Team</th>
+                    <th>Auszeichnung</th>
+                </tr>
+            </thead>
+            <tbody id="players-table">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let players = [];
+        
+        function addPlayer() {
+            let role = document.getElementById('role').value;
+            let champion = document.getElementById('champion').value;
+            let rank = document.getElementById('rank').value;
+            let kda = document.getElementById('kda').value;
+            let team = document.getElementById('team').value;
+            let award = document.getElementById('award').value;
+            
+            if (!champion || !rank || !kda) {
+                alert('Bitte alle Felder ausfüllen!');
+                return;
+            }
+            
+            players.push({ role, champion, rank, kda, team, award });
+            updateTable();
+        }
+        
+        function updateTable() {
+            let tableBody = document.getElementById('players-table');
+            tableBody.innerHTML = '';
+            
+            players.forEach(player => {
+                let row = `<tr>
+                    <td>${player.role}</td>
+                    <td>${player.champion}</td>
+                    <td>${player.rank}</td>
+                    <td>${player.kda}</td>
+                    <td>${player.team}</td>
+                    <td>${player.award}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+    </script>
+</body>
+</html>
