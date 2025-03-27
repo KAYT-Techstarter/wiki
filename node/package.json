@@ -1,0 +1,18 @@
+{
+  "name": "nodeAPI",
+  "version": "1.0.0",
+  "main": "nodeAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node nodeAPI.js"
+  },
+  "keywords": [],
+  "author": "Marvin , Young",
+  "license": "ISC",
+  "description": "First API test with Node",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodeAPI": "file:",
+    "sillyname": "^0.1.0"
+  }
+}
