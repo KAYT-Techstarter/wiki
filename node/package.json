@@ -4,7 +4,7 @@
   "main": "nodeAPI.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node nodeAPI.js"
+    "start": "nodemon nodeAPI.js"
   },
   "keywords": [],
   "author": "Marvin , Young",
@@ -13,6 +13,8 @@
   "dependencies": {
     "express": "^4.21.2",
     "nodeAPI": "file:",
+    "nodemon": "^3.1.9",
     "sillyname": "^0.1.0"
   }
 }
+

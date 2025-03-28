@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "dataType": "Book"
+  },
+  {
+    "id": 2,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "dataType": "Book"
+  },
+  {
+    "id": 3,
+    "title": "1984",
+    "author": "George Orwell",
+    "dataType": "Book"
+  },
+  {
+    "id": 4,
+    "title": "1984",
+    "author": "George Orwell",
+    "dataType": "Book"
+  },
+  {
+    "id": 5,
+    "title": "1984",
+    "author": "George Orwell",
+    "dataType": "Book"
+  },
+  {
+    "id": 6,
+    "title": "1984",
+    "author": "George Orwell",
+    "dataType": "Book"
+  },
+  {
+    "id": 7,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "dataType": "Book"
+  },
+  {
+    "id": 8,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "dataType": "Book"
+  },
+  {
+    "id": 9,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "dataType": "Book"
+  },
+  {
+    "id": 10,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "dataType": "Book"
+  },
+  {
+    "id": 11,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "dataType": "Book"
+  },
+  {
+    "id": 12,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "dataType": "Book"
+  },
+  {
+    "id": 13,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "dataType": "Book"
+  },
+  {
+    "id": 14,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "dataType": "Book"
+  },
+  {
+    "id": 15,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "dataType": "Book"
+  },
+  {
+    "id": 16,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "dataType": "Book"
+  },
+  {
+    "id": 17,
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "dataType": "Book"
+  }
+]

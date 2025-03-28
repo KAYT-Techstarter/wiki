@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daten Hinzufügen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Daten Hinzufügen</h1>
+        <h2> Um die API zu starten cd in das verzeichniss und dann nodemon server.js einegebn im Terminal</h2>
+    </header>
+
+    <div id="form">
+        <!-- Gamemode -->
+        <label for="gamemode">Gamemode:</label>
+        <select id="gamemode">
+            <option value="">Bitte wählen...</option>
+            <option value="Ranked">Ranked</option>
+        </select><br><br>
+
+        <!-- Date -->
+        <label for="date">Datum:</label>
+        <input type="date" id="date"><br><br>
+
+        <!-- Bans -->
+        <label>Bans (max. 10):</label>
+        <div class="select-container" id="bans"></div><br>
+
+        <div class="team-container">
+            <!-- Blue Team -->
+            <div class="team">
+                <h2>Blue Team</h2>
+                <label for="blueTeamTop">Top:</label><select id="blueTeamTop"><option value="">Bitte wählen...</option><option value="Aatrox">Aatrox</option><option value="Caitlyn">Caitlyn</option><option value="Fizz">Fizz</option></select><br>
+                <label for="blueTeamJungle">Jungle:</label><select id="blueTeamJungle"><option value="">Bitte wählen...</option><option value="Nautilus">Nautilus</option><option value="Sejuani">Sejuani</option><option value="Warwick">Warwick</option></select><br>
+                <label for="blueTeamMid">Mid:</label><select id="blueTeamMid"><option value="">Bitte wählen...</option><option value="Lissandra">Lissandra</option><option value="Ahri">Ahri</option><option value="Zed">Zed</option></select><br>
+                <label for="blueTeamADC">ADC:</label><select id="blueTeamADC"><option value="">Bitte wählen...</option><option value="Samira">Samira</option><option value="Caitlyn">Caitlyn</option><option value="Jhin">Jhin</option></select><br>
+                <label for="blueTeamSupport">Support:</label><select id="blueTeamSupport"><option value="">Bitte wählen...</option><option value="Leona">Leona</option><option value="Thresh">Thresh</option><option value="Lulu">Lulu</option></select><br>
+            </div>
+        
+            <!-- Red Team -->
+            <div class="team">
+                <h2>Red Team</h2>
+                <label for="redTeamTop">Top:</label><select id="redTeamTop"><option value="">Bitte wählen...</option><option value="Singed">Singed</option><option value="Gnar">Gnar</option><option value="Malphite">Malphite</option></select><br>
+                <label for="redTeamJungle">Jungle:</label><select id="redTeamJungle"><option value="">Bitte wählen...</option><option value="Viego">Viego</option><option value="Kayn">Kayn</option><option value="Lee Sin">Lee Sin</option></select><br>
+                <label for="redTeamMid">Mid:</label><select id="redTeamMid"><option value="">Bitte wählen...</option><option value="Tristana">Tristana</option><option value="Orianna">Orianna</option><option value="Syndra">Syndra</option></select><br>
+                <label for="redTeamADC">ADC:</label><select id="redTeamADC"><option value="">Bitte wählen...</option><option value="Lucian">Lucian</option><option value="Kai'Sa">Kai'Sa</option><option value="Ezreal">Ezreal</option></select><br>
+                <label for="redTeamSupport">Support:</label><select id="redTeamSupport"><option value="">Bitte wählen...</option><option value="Nami">Nami</option><option value="Janna">Janna</option><option value="Alistar">Alistar</option></select><br>
+            </div>
+        </div>
+        
+
+        <!-- Weitere Dropdowns für Elo, Skins, MVP, etc. -->
+        <label>Elo (max. 3):</label>
+        <div class="select-container" id="elo"></div><br>
+
+        <label>Skins (max. 10):</label>
+        <div class="select-container" id="skins"></div><br>
+
+        <!-- MVP & SMVP -->
+        <label for="mvp">MVP:</label>
+        <select id="mvp">
+            <option value="">Bitte wählen...</option>
+            <option value="Lucian">Lucian</option>
+            <option value="Nami">Nami</option>
+        </select><br><br>
+
+        <label for="smvp">SMVP:</label>
+        <select id="smvp">
+            <option value="">Bitte wählen...</option>
+            <option value="Lucian">Lucian</option>
+            <option value="Nami">Nami</option>
+        </select><br><br>
+
+        <table border="1">
+            <tr>
+                <th>Blue Team</th>
+                <th>Rolle</th>
+                <th>Red Team</th>
+            </tr>
+        
+            <tr>
+                <td>
+                    <label for="blueTeamTopKDA_Kills">Kills:</label>
+                    <input type="number" id="blueTeamTopKDA_Kills" min="0" value="0">
+                    <label for="blueTeamTopKDA_Deaths">Deaths:</label>
+                    <input type="number" id="blueTeamTopKDA_Deaths" min="0" value="0">
+                    <label for="blueTeamTopKDA_Assists">Assists:</label>
+                    <input type="number" id="blueTeamTopKDA_Assists" min="0" value="0">
+                </td>
+                <td><b>Top</b></td>
+                <td>
+                    <label for="redTeamTopKDA_Kills">Kills:</label>
+                    <input type="number" id="redTeamTopKDA_Kills" min="0" value="0">
+                    <label for="redTeamTopKDA_Deaths">Deaths:</label>
+                    <input type="number" id="redTeamTopKDA_Deaths" min="0" value="0">
+                    <label for="redTeamTopKDA_Assists">Assists:</label>
+                    <input type="number" id="redTeamTopKDA_Assists" min="0" value="0">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <label for="blueTeamJungleKDA_Kills">Kills:</label>
+                    <input type="number" id="blueTeamJungleKDA_Kills" min="0" value="0">
+                    <label for="blueTeamJungleKDA_Deaths">Deaths:</label>
+                    <input type="number" id="blueTeamJungleKDA_Deaths" min="0" value="0">
+                    <label for="blueTeamJungleKDA_Assists">Assists:</label>
+                    <input type="number" id="blueTeamJungleKDA_Assists" min="0" value="0">
+                </td>
+                <td><b>Jungle</b></td>
+                <td>
+                    <label for="redTeamJungleKDA_Kills">Kills:</label>
+                    <input type="number" id="redTeamJungleKDA_Kills" min="0" value="0">
+                    <label for="redTeamJungleKDA_Deaths">Deaths:</label>
+                    <input type="number" id="redTeamJungleKDA_Deaths" min="0" value="0">
+                    <label for="redTeamJungleKDA_Assists">Assists:</label>
+                    <input type="number" id="redTeamJungleKDA_Assists" min="0" value="0">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <label for="blueTeamMidKDA_Kills">Kills:</label>
+                    <input type="number" id="blueTeamMidKDA_Kills" min="0" value="0">
+                    <label for="blueTeamMidKDA_Deaths">Deaths:</label>
+                    <input type="number" id="blueTeamMidKDA_Deaths" min="0" value="0">
+                    <label for="blueTeamMidKDA_Assists">Assists:</label>
+                    <input type="number" id="blueTeamMidKDA_Assists" min="0" value="0">
+                </td>
+                <td><b>Mid</b></td>
+                <td>
+                    <label for="redTeamMidKDA_Kills">Kills:</label>
+                    <input type="number" id="redTeamMidKDA_Kills" min="0" value="0">
+                    <label for="redTeamMidKDA_Deaths">Deaths:</label>
+                    <input type="number" id="redTeamMidKDA_Deaths" min="0" value="0">
+                    <label for="redTeamMidKDA_Assists">Assists:</label>
+                    <input type="number" id="redTeamMidKDA_Assists" min="0" value="0">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <label for="blueTeamADC_Kills">Kills:</label>
+                    <input type="number" id="blueTeamADC_Kills" min="0" value="0">
+                    <label for="blueTeamADC_Deaths">Deaths:</label>
+                    <input type="number" id="blueTeamADC_Deaths" min="0" value="0">
+                    <label for="blueTeamADC_Assists">Assists:</label>
+                    <input type="number" id="blueTeamADC_Assists" min="0" value="0">
+                </td>
+                <td><b>ADC</b></td>
+                <td>
+                    <label for="redTeamADC_Kills">Kills:</label>
+                    <input type="number" id="redTeamADC_Kills" min="0" value="0">
+                    <label for="redTeamADC_Deaths">Deaths:</label>
+                    <input type="number" id="redTeamADC_Deaths" min="0" value="0">
+                    <label for="redTeamADC_Assists">Assists:</label>
+                    <input type="number" id="redTeamADC_Assists" min="0" value="0">
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <label for="blueTeamSupport_Kills">Kills:</label>
+                    <input type="number" id="blueTeamSupport_Kills" min="0" value="0">
+                    <label for="blueTeamSupport_Deaths">Deaths:</label>
+                    <input type="number" id="blueTeamSupport_Deaths" min="0" value="0">
+                    <label for="blueTeamSupport_Assists">Assists:</label>
+                    <input type="number" id="blueTeamSupport_Assists" min="0" value="0">
+                </td>
+                <td><b>Support</b></td>
+                <td>
+                    <label for="redTeamSupport_Kills">Kills:</label>
+                    <input type="number" id="redTeamSupport_Kills" min="0" value="0">
+                    <label for="redTeamSupport_Deaths">Deaths:</label>
+                    <input type="number" id="redTeamSupport_Deaths" min="0" value="0">
+                    <label for="redTeamSupport_Assists">Assists:</label>
+                    <input type="number" id="redTeamSupport_Assists" min="0" value="0">
+                </td>
+            </tr>
+        </table>        
+    
+        <!-- Winning Team & RoundTime -->
+        <label for="winningTeam">Gewinnendes Team:</label>
+        <select id="winningTeam">
+            <option value="Blue">Blue</option>
+            <option value="Red">Red</option>
+        </select><br><br>
+
+        <label for="roundTime">Round Time:</label>
+        <input type="text" id="roundTime" placeholder="13:55"><br><br>
+
+        <button type="submit" id="submitBtn">Absenden</button>
+    </div>
+
+    <script src="forms.js"></script>
+</body>
+
+</html>
